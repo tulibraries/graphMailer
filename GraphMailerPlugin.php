@@ -103,6 +103,13 @@ class GraphMailerPlugin extends GenericPlugin
 	$mailers['microsoft-graph'] = [
 		'transport' => 'microsoft-graph',
 	];
+
+	// Update the bulk mailer configuration to use the "bulk_email" queue
+        $mailers['bulk'] = array_merge($mailers['bulk'] ?? [], [
+            'transport' => 'microsoft-graph', // Ensure bulk also uses your new transport
+            'queue' => 'bulk_email',          // This directs it to the specific queue
+        ]);
+
 	$config->set('mail.mailers', $mailers);
 
         // Swap the default mailer

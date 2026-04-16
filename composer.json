@@ -5,6 +5,9 @@
         "illuminate/mail": "^10.0",
         "innoge/laravel-msgraph-mail": "^1.4"
     },
+    "scripts": {
+        "test": "php tests/run.php"
+    },
     "autoload": {
         "psr-4": {
             "Tulibraries\\GraphMailer\\": "src/"
