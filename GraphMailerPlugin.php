@@ -102,6 +102,7 @@ class GraphMailerPlugin extends GenericPlugin
 	$mailers = $config->get('mail.mailers', []);
 	$mailers['microsoft-graph'] = [
 		'transport' => 'microsoft-graph',
+		'save_to_sent_items' => true,
 	];
 	$config->set('mail.mailers', $mailers);
 
